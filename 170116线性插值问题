@@ -1,0 +1,48 @@
+#include<iostream>
+#include<cmath>
+
+using namespace std;
+
+int main()
+{	
+	double salt_a, temp_a,salt_b,salt_c,temp_b,temp_c;
+
+	cout << "Please input salt_a" << endl;
+	cin >> salt_a;
+	cout << "Please input temp_a" << endl;
+	cin >> temp_a;
+
+	cout << "Please input salt_c" << endl;
+	cin >> salt_c;
+	cout << "Please input temp_c" << endl;
+	cin >> temp_c;
+
+	cout << "Please input salt_b" << endl;
+	cin >> salt_b;
+	if (33 < salt_a<38 && 33<salt_c < 38)
+	{
+	    if (salt_a >= salt_c)
+		{
+
+			temp_b = temp_c + ((salt_b - salt_c) / (salt_a - salt_c))*(temp_a - temp_c);
+			cout << "Temperature b is " << temp_b;
+			if (salt_a >salt_b || salt_b > salt_c)
+			{
+				cout << "error2" << endl;
+			}
+		}
+		else if (salt_a < salt_c)
+		{
+			temp_b = temp_a + ((salt_b - salt_a) / (salt_c - salt_a))*(temp_c - temp_a);
+			cout << "Temperature b is " << temp_b;
+			if (salt_c <salt_b || salt_b < salt_a)
+			{
+				cout << "error2" << endl;
+			}
+		}
+	}
+	else
+	{
+		cout << "error1:not in quite area" << endl;
+	}
+}
